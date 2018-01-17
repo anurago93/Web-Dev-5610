@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>HW02 Task3</title>
+	<style>
+	* {
+		box-sizing: border-box;
+	}
+	#title {
+		padding:20px;
+		text-align: center;
+	}
+	.Col{
+		padding: 15px;
+	}
+	.leftCol {
+		width:33.3333%;
+		float: left;
+	}
+	.rightCol {
+		width:66.6667%;
+		float: right;
+		display: none;
+	}
+	.active{
+		display: block;
+	}
+	.leftCol ul {
+		list-style-type: none;
+		margin: 0;
+	}
+	.leftCol li {
+		padding: 15px;
+	}
+	.clearfix {
+		overflow: auto;
+	}
+	</style>
+</head>
+<body>
+	<h1 id="title">HW03 Task Three</h1>
+	<div class="Col">
+	  <div class="leftCol">
+		<ul>
+			<li><a id="l" href="#Lorem" onclick="showContent('Lorem','l')">Lorem Ipsem</a></li>
+			<li><a id="99b" href="#99Bottles" onclick="showContent('99Bottles','99b')">99 Bottles</a></li>
+			<li><a id="lt" href="#lastThing" onclick="showContent('lastThing','lt')">Last Thing</a></li>
+		</ul>
+	  </div>
+
+	  <div id="Lorem" class="rightCol active">
+		<h4>Lorem Ipsum</h4>
+		<p>In publishing and graphic design, lorem ipsum is a filler text or greeking commonly used to demonstrate the textual elements of a graphic document or visual presentation. Replacing meaningful content with placeholder text allows designers to design the form of the content before the content itself has been produced.</p>
+        
+        <p>The lorem ipsum text is typically a scrambled section of De finibus bonorum et malorum, a 1st-century BC Latin text by Cicero, with words altered, added, and removed to make it nonsensical, improper Latin.</p>
+
+        <p>A variation of the ordinary lorem ipsum text has been used in typesetting since the 1960s or earlier, when it was popularized by advertisements for Letraset transfer sheets.</p>
+
+        <p>It was introduced to the Information Age in the mid-1980s by Aldus Corporation, which employed it in graphics and word-processing templates for its desktop publishing program PageMaker.</p>
+      </div>
+
+      <div id="99Bottles" class="rightCol">
+    	<h4>99 Bottles of Beer</h4>
+    	<p> 99 bottles of beer on the wall, 99 bottles of beer.
+        Take one down, pass it around, 98 bottles of beer on the wall...</p>
+        <p>98 bottles of beer on the wall, 98 bottles of beer.
+        Take one down, pass it around, 97 bottles of beer on the wall...</p>
+        <p>97 bottles of beer on the wall, 97 bottles of beer.
+        Take one down, pass it around, 96 bottles of beer on the wall...</p>
+        <p>No more bottles of beer on the wall, no more bottles of beer.
+        Go to the store and buy some more, 99 bottles of beer on the wall...</p>
+      </div>
+
+      <div id="lastThing" class="rightCol">
+    	<h4>Last Thing</h4>
+    	<p>This is the third thing</p>
+      </div>
+    </div>
+
+	<script>
+		function showContent(id,li) {
+			var hideAll = document.getElementsByClassName("rightCol");
+			var activeLinks = document.getElementsByTagName("a");
+			var j = activeLinks.length-1;
+            var i = hideAll.length-1;
+			while (i>=0){
+				hideAll[i].style.display = "none";
+				i=i-1;
+			}
+			while (j>=0){
+				activeLinks[j].style.color = "";
+				j=j-1;
+			}
+			var a = document.getElementById(id);
+			a.style.display = "block";
+			document.getElementById(li).style.color = "red";
+		}
+	</script>
+</body>
+</html>

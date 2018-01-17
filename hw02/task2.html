@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>HW02 Task2</title>
+	<style>
+		#div {
+          position: absolute;
+          bottom: 0;
+		}
+
+		button {
+			background-color: #21E5F3;
+			color: black;
+			padding: 10px;
+			text-align: center;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 20px;
+		}
+
+		li {
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="head">""</h1>
+	<div>
+		<ul>
+			<li>
+				<button id="alert">Alert</button>
+			</li>
+			<li>
+				<button id="increment">Increment</button>
+			</li>
+			<li>
+				<button id="append">Append</button>
+			</li>
+		</ul>
+	</div>
+    <div id="div">
+    </div>
+
+	<script>
+		var x = 10;
+		document.getElementById("head").innerHTML = x;
+
+		document.getElementById("increment").addEventListener("click", IncrementNum);
+
+		function IncrementNum() {
+		x++;
+        document.getElementById("head").innerHTML = x;
+		}
+
+		document.getElementById("alert").addEventListener("click", alertPop);
+
+		function alertPop() {
+		    alert(x);
+		}
+        
+        document.getElementById("append").addEventListener("click", appendPara);
+
+		function appendPara() {
+
+        var y = x.toString();
+		var p = document.createElement("p");
+		var text = document.createTextNode(y);
+		var pageEnd = document.getElementById("div");
+		p.appendChild(text);
+		pageEnd.appendChild(p);
+	}
+	</script>
+</body>
+</html>
